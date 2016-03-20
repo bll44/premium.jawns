@@ -1,5 +1,8 @@
 <head>
 	<title>Premium Jawns</title>
+	<meta charset="UTF-8">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+	<link href='https://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
 	<link type="text/css" href="{{ asset('bootstrap-3.3.6-dist/css/bootstrap.css') }}" rel="stylesheet">
 	<link type="text/css" href="{{ asset('bootstrap-3.3.6-dist/css/bootstrap-theme.css') }}" rel="stylesheet">
 	<link type="text/css" href="{{ asset('css/scrolling-nav.css') }}" rel="stylesheet">

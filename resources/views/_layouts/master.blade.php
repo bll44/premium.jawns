@@ -1,9 +1,11 @@
 <!doctype html>
 <html lang="en">
 
-@include('_layouts.header')
+@include('_layouts/header')
 
 <body>
+
+@include('_layouts/navigation/default-nav')
 
 @yield('styles')
 
@@ -16,6 +18,6 @@
 @yield('scripts')
 
 </body>
-@include('._layouts.footer')
+@include('._layouts/footer')
 
 </html>

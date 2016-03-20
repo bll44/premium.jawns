@@ -1,0 +1,8 @@
+body {
+	padding-top: 100px;
+}
+
+.navbar .navbar-header .navbar-brand {
+	font-family: 'Lobster Two', cursive;
+	font-size: 32px;
+}
