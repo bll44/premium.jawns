@@ -7,7 +7,14 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+use Validator;
+use DB;
+use App\Curator;
+use Hash;
+use Auth;
+use Redirect;
+
+class CuratorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home/featured');
-    }
-
-    public function about()
-    {
-        return view('home/about');
+        //
     }
 
     /**
@@ -88,5 +90,48 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getCreateCurator()
+    {
+        return view('curator/create_curator');
+    }
+
+    public function postCreateCurator(Request $http, Curator $curator)
+    {
+        $validator = Validator::make($http->all(), [
+                'name' => 'required',
+                'username' => 'required',
+                'email' => 'required|email',
+                'password' => 'required|confirmed|min:6'
+            ]);
+
+        if($validator->fails())
+        {
+            return redirect::to('curator/create')->withInput();
+        }
+
+        $curator->name = $http->name;
+        $curator->username = $http->username;
+        $curator->email = $http->email;
+        $curator->password = Hash::make($http->password);
+        $curator->admin = strtolower($http->admin) === 'on' ? 1 : 0;
+
+        $curator->save();
+
+        return redirect('curator/create')->with('message', 'Created new curator successfully.');
+    }
+
+    public function getCuratorLogin()
+    {
+        return view('auth/login');
+    }
+
+    public function postCuratorLogin(Request $http, Curator $curator)
+    {
+        if(Auth::attempt(['username' => $http->username, 'password' => $http->password]))
+            return redirect::intended('/');
+        else
+            return redirect::to('login');
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +16,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home/featured');
-    }
-
-    public function about()
-    {
-        return view('home/about');
+        return view('admin/admin_functions');
     }
 
     /**
