@@ -4,7 +4,7 @@
 
 <div class="row">
 	<div class="col-lg-8">
-		<form action="{{ URL::to('login') }}" method="post" id="curator-login-form">
+		<form action="/login" method="post" id="curator-login-form">
 			{{ csrf_field() }}
 			<div class="form-group">
 				<label for="username">Username</label>

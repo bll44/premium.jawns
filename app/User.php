@@ -32,4 +32,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    public function isAdmin()
+    {
+        $results = DB::select('select admin from users where username = ? and admin = 1', [$this->username]);
+        return count($results) > 0 ? true : false;
+    }
 }

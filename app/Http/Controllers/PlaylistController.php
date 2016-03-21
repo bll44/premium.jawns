@@ -7,14 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Validator;
-use DB;
-use App\Curator;
-use Hash;
-use Auth;
-use Redirect;
-
-class CuratorController extends Controller
+class PlaylistController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +16,9 @@ class CuratorController extends Controller
      */
     public function index()
     {
-        //
+        $playlists = Playlist::all();
+
+        return view('curation/playlists', compact('playlists'));
     }
 
     /**
@@ -90,35 +85,5 @@ class CuratorController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function getCreateCurator()
-    {
-        return view('curator/create_curator');
-    }
-
-    public function postCreateCurator(Request $http, Curator $curator)
-    {
-        $validator = Validator::make($http->all(), [
-                'name' => 'required',
-                'username' => 'required',
-                'email' => 'required|email',
-                'password' => 'required|confirmed|min:6'
-            ]);
-
-        if($validator->fails())
-        {
-            return redirect::to('curator/create')->withInput();
-        }
-
-        $curator->name = $http->name;
-        $curator->username = $http->username;
-        $curator->email = $http->email;
-        $curator->password = Hash::make($http->password);
-        $curator->admin = strtolower($http->admin) === 'on' ? 1 : 0;
-
-        $curator->save();
-
-        return redirect('curator/create')->with('message', 'Created new curator successfully.');
     }
 }

@@ -13,18 +13,18 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse navbar-right" id="default-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="{{ URL::to('/') }}">Projects</a></li>
-				<li><a href="{{ URL::to('/') }}">Curators</a></li>
-				<li><a href="{{ URL::to('about') }}">About</a></li>
+				<li><a href="/">Projects</a></li>
+				<li><a href="/">Curators</a></li>
+				<li><a href="/about">About</a></li>
 				@if(Auth::check())
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-							aria-expanded="false">Dropdown <span class="caret"></span></a>
+							aria-expanded="false">{{ Auth::user()->username }} <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Account</a></li>
-						<li><a href="#">Profile</a></li>
+						<li><a href="/account/{{ Auth::user()->username }}">Account</a></li>
+						<li><a href="/profile/{{ Auth::user()->username }}">Profile</a></li>
 						<li role="separator" class="divider"></li>
-						<li><a href="#"><i class="fa fa-power-off"></i> Log out</a></li>
+						<li><a href="/logout"><i class="fa fa-power-off"></i> Log out</a></li>
 					</ul>
 				</li>
 				@endif

@@ -15,7 +15,7 @@
 
 <div class="row">
 	<div class="col-lg-8">
-		<form action="" method="post" id="create-curator-form">
+		<form action="/curator/create" method="post" id="create-curator-form">
 			{{ csrf_field() }}
 			<div class="form-group">
 				<label for="name">Name</label>
