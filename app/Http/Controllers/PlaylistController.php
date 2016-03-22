@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Playlist;
+
 class PlaylistController extends Controller
 {
     /**
@@ -28,7 +30,7 @@ class PlaylistController extends Controller
      */
     public function create()
     {
-        //
+        return view('curation/create_playlist');
     }
 
     /**

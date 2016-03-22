@@ -15,3 +15,5 @@ Route::post('curator/create', 'CuratorController@postCreateCurator');
 
 // Playlist routes
 Route::get('playlists', 'PlaylistController@index');
+Route::get('playlists/create', 'PlaylistController@create');
+Route::post('playlist', 'PlaylistController@store');

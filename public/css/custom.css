@@ -10,3 +10,15 @@ body {
 #default-navbar-collapse-1 {
 	margin-right: 50px;
 }
+
+#tracks-container .list-group-item {
+	display: list-item;
+}
+
+#tracks-container .list-group-item.list-label {
+	display: block;
+}
+
+#tracks-container.list-group {
+	list-style: decimal inside;
+}
