@@ -13,6 +13,7 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse navbar-right" id="default-navbar-collapse-1">
 			<ul class="nav navbar-nav">
+				<li><a href="/playlists">Playlists</a></li>
 				<li><a href="/">Projects</a></li>
 				<li><a href="/">Curators</a></li>
 				<li><a href="/about">About</a></li>

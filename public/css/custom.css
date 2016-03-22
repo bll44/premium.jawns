@@ -22,3 +22,7 @@ body {
 #tracks-container.list-group {
 	list-style: decimal inside;
 }
+
+#create-playlist-form {
+	display: none;
+}
