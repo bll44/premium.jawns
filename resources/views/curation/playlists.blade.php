@@ -5,7 +5,7 @@
 <div class="row">
 	<div class="col-lg-8 col-lg-offset-2">
 		<ul class="list-group">
-			<li class="list-group-item">This is a playlist</li>
+			<li class="list-group-item">Rap Party Beats 1</li>
 			<li class="list-group-item">
 				<div id="create-playlist-form">
 					<h4>New Playlist</h4>
@@ -16,13 +16,8 @@
 							<input type="text" class="form-control" name="playlist_title" placeholder="Playlist title">
 						</div>
 						<ol class="list-group" id="tracks-container">
-							<li class="list-group-item list-label"><b>Tracks in Playlist</b></li>
+							<li class="list-group-item list-group-item-info list-label"><b>Tracks:</b></li>
 						</ol>
-						<div id="new-track-input-container">
-							<div class="form-group">
-								<input type="text" id="track-src-url-input" class="form-control" placeholder="Source URL to play track">
-							</div>
-						</div>
 						<div class="form-group">
 							<button type="button" class="btn btn-default add-track-btn" data-toggle="modal" data-target="#addTrackModal">+ Add track</button>
 						</div>
@@ -34,6 +29,8 @@
 		</ul>
 	</div>
 </div>
+
+@include('curation/add_track_modal')
 
 @stop
 

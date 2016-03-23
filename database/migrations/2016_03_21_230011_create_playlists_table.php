@@ -15,6 +15,7 @@ class CreatePlaylistsTable extends Migration
         Schema::create('playlists', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
+            $table->longText('description')->nullable();
             $table->integer('track_count')->default(0);
             $table->integer('curator_id');
             $table->timestamps();
