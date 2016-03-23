@@ -9,7 +9,7 @@
 			<li class="list-group-item">
 				<div id="create-playlist-form">
 					<h4>New Playlist</h4>
-					<form method="post" action="/playlist">
+					<form method="post" action="/playlist/store">
 						{{ csrf_field() }}
 						<div class="form-group">
 							<label for="playlist_title">Title</label>
@@ -24,7 +24,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<button type="button" class="btn btn-default">+ Add track</button>
+							<button type="button" class="btn btn-default add-track-btn" data-toggle="modal" data-target="#addTrackModal">+ Add track</button>
 						</div>
 						<button type="submit" class="btn btn-primary">Create playlist</button>
 					</form>
