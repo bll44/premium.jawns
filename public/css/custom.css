@@ -26,3 +26,7 @@ body {
 #create-playlist-form {
 	display: none;
 }
+
+#addTrackModalTitle {
+	font-family: 'Lobster Two', cursive;
+}
